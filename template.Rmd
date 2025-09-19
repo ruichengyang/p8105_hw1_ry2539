@@ -28,6 +28,12 @@ nrow(early_january_weather)
 
 The size of this data set would have a total of 15 variables and 358 values for each variable. The mean temperature in early January would be 39.58 degrees Fahrenheit.
 
+```{r scatter_plot}
+ggplot(data = early_january_weather, aes(x=time_hour, y=temp, color = humid)) + geom_point() 
+
+ggsave("scatter_plot.pdf", height = 4, width = 4)
+```
+
 
 # Section 2
 
