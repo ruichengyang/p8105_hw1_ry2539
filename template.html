@@ -409,10 +409,22 @@ values for each variable. The mean temperature in early January would be
 <div id="section-2" class="section level1">
 <h1>Section 2</h1>
 <p>I can take the mean of the sample, too!</p>
-<pre class="r"><code>normal_distribution = rnorm(10)
-logical_vector = (normal_distribution &gt; 0)
-vec_char = c(&quot;My&quot;, &quot;name&quot;, &quot;is&quot;, &quot;Richard&quot;, &quot;and&quot;, &quot;I&quot;, &quot;like&quot;, &quot;watching&quot;, &quot;TV&quot;, &quot;shows&quot;)
-factor_vector = factor(vec_char, c(&quot;low&quot;, &quot;medium&quot;, &quot;high&quot;))</code></pre>
+<pre class="r"><code>dataframe = tibble(
+  normal_distribution = rnorm(10),
+  logical_vector = (normal_distribution &gt; 0),
+  vec_char = c(&quot;My&quot;, &quot;name&quot;, &quot;is&quot;, &quot;Richard&quot;, &quot;and&quot;, &quot;I&quot;, &quot;like&quot;, &quot;watching&quot;, &quot;TV&quot;, &quot;shows&quot;),
+  factor_vector = factor(vec_char, c(&quot;low&quot;, &quot;medium&quot;, &quot;high&quot;))
+)</code></pre>
+<pre class="r"><code>  norm_mean = mean(dataframe$normal_distribution)
+  logical_mean = mean(dataframe$logical_vector)</code></pre>
+<p>The mean of the normal distribution is 0.1372821. The mean of the
+logical vector is 0.6.</p>
+<pre class="r"><code>  vector_mean = mean(dataframe$vec_char)</code></pre>
+<pre><code>## Warning in mean.default(dataframe$vec_char): argument is not numeric or
+## logical: returning NA</code></pre>
+<pre class="r"><code>  factor_mean = mean(dataframe$factor_vector)</code></pre>
+<pre><code>## Warning in mean.default(dataframe$factor_vector): argument is not numeric or
+## logical: returning NA</code></pre>
 </div>
 <div id="section-3" class="section level1">
 <h1>Section 3</h1>

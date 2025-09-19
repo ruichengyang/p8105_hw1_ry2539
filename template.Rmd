@@ -41,11 +41,27 @@ I can take the mean of the sample, too!
 
 ```{r dataframes}
 
-normal_distribution = rnorm(10)
-logical_vector = (normal_distribution > 0)
-vec_char = c("My", "name", "is", "Richard", "and", "I", "like", "watching", "TV", "shows")
-factor_vector = factor(vec_char, c("low", "medium", "high"))
+dataframe = tibble(
+  normal_distribution = rnorm(10),
+  logical_vector = (normal_distribution > 0),
+  vec_char = c("My", "name", "is", "Richard", "and", "I", "like", "watching", "TV", "shows"),
+  factor_vector = factor(vec_char, c("low", "medium", "high"))
+)
 
+```
+
+```{r dataframe mean}
+  norm_mean = mean(dataframe$normal_distribution)
+  logical_mean = mean(dataframe$logical_vector)
+  
+```
+
+The mean of the normal distribution is `r mean(dataframe$normal_distribution)`.
+The mean of the logical vector is `r mean(dataframe$logical_vector)`.
+
+```{r dataframe_mean_2}
+  vector_mean = mean(dataframe$vec_char)
+  factor_mean = mean(dataframe$factor_vector)
 ```
 
 # Section 3
