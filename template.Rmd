@@ -13,11 +13,14 @@ a _normal distribution_:
 ```{r setup, include = FALSE}
 library(tidyverse)
 ```
+
+```{r data_setup}
+
 ```
+
 
 # Section 2
 
 I can take the mean of the sample, too!
-The mean is `r mean(samp)`.
 
 # Section 3
