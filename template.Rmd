@@ -14,9 +14,19 @@ a _normal distribution_:
 library(tidyverse)
 ```
 
-```{r data_setup}
-
+```{r data_summary}
+library(moderndive)
+data("early_january_weather")
+summary(early_january_weather)
+mean(early_january_weather$temp)
 ```
+
+```{r data_size}
+ncol(early_january_weather)
+nrow(early_january_weather)
+```
+
+The size of this data set would have a total of 15 variables and 358 values for each variable. The mean temperature in early January would be 39.58 degrees Fahrenheit.
 
 
 # Section 2
