@@ -39,4 +39,13 @@ ggsave("scatter_plot.pdf", height = 4, width = 4)
 
 I can take the mean of the sample, too!
 
+```{r dataframes}
+
+normal_distribution = rnorm(10)
+logical_vector = (normal_distribution > 0)
+vec_char = c("My", "name", "is", "Richard", "and", "I", "like", "watching", "TV", "shows")
+factor_vector = factor(vec_char, c("low", "medium", "high"))
+
+```
+
 # Section 3
