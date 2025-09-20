@@ -9,39 +9,39 @@ Ruicheng Yang, Data Sciences I, ry2539
 
 ```{r setup, include = FALSE}
 
-#load tidyverse#
+  #load tidyverse#
 
-library(tidyverse)
+  library(tidyverse)
 ```
 
 ```{r data_summary}
 
-#load the moderndive package using library#
+  #load the moderndive package using library#
 
-library(moderndive)
+  library(moderndive)
 
-#load moderndive data from package, then summary function for variables#
-#find the mean of the temperature#
+  #load moderndive data from package, then summary function for variables#
+  #find the mean of the temperature#
 
-data("early_january_weather")
-summary(early_january_weather)
-mean(early_january_weather$temp)
+  data("early_january_weather")
+  summary(early_january_weather)
+  mean(early_january_weather$temp)
 ```
 
 ```{r data_size}
 
-#ncol and nrow to show the size of the data from moderndive#
+  #ncol and nrow to show the size of the data from moderndive#
 
-ncol(early_january_weather)
-nrow(early_january_weather)
+  ncol(early_january_weather)
+  nrow(early_january_weather)
 ```
 
 The size of this data set would have a total of 15 variables and 358 values for each variable. The mean temperature in early January would be 39.58 degrees Fahrenheit. As usual, they tracked the important variables across the first 15 days of January on the year of 2013. Interestingly, for each day, it seems like they didn't track the weather from 11:00 PM to 12:00 AM. The important variables here mean the temperature of the day, the humidity, wind direction, wind speed, wind gust, precipitation, pressure, and visibility.
 
 ```{r scatter_plot}
-ggplot(data = early_january_weather, aes(x=time_hour, y=temp, color = humid)) + geom_point() 
+  ggplot(data = early_january_weather, aes(x=time_hour, y=temp, color = humid)) + geom_point() 
 
-ggsave("scatter_plot.pdf", height = 4, width = 4)
+  ggsave("scatter_plot.pdf", height = 4, width = 4)
 ```
 
 When we plot out the relationship between the temperature and the time-hour, we see that as the days progress, the average temperature of each day is increasing. It also seems like for each day, the temperature at night has a downward trend, whereas the temperature of each day increases. It also seems like the humidity has also increased as the days progress through early January.
@@ -66,19 +66,19 @@ dataframe = tibble(
 
   #mean of the random normal distribution and logical vector#
 
-  norm_mean = mean(dataframe$normal_distribution)
-  logical_mean = mean(dataframe$logical_vector)
+  norm_mean = mean(pull(dataframe, normal_distribution))
+  logical_mean = mean(pull(dataframe, logical_vector))
   
 ```
 
-The mean of the normal distribution is `r mean(dataframe$normal_distribution)`. The mean of the logical vector is `r mean(dataframe$logical_vector)`.
+The mean of the normal distribution is `r norm_mean`. The mean of the logical vector is `r logical_mean`.
 
 ```{r dataframe_mean_2}
 
   #mean of the char vector and the factor vector with three levels#
 
-  vector_mean = mean(dataframe$vec_char)
-  factor_mean = mean(dataframe$factor_vector)
+  vector_mean = mean(pull(dataframe, vec_char))
+  factor_mean = mean(pull(dataframe, factor_vector))
   
 ```
 
